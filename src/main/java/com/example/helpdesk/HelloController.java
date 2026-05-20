@@ -8,6 +8,11 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello, World!"; // Вы можете вернуть любую строку
+        return "Hello, World!"; // http://localhost:8080
+    }
+
+    @GetMapping("/status")
+    public String status() {
+        return "Application is running"; // http://localhost:8080/status
     }
 }
