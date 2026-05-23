@@ -12,7 +12,7 @@ public class PageController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("pageTitle", "Help Desk");
-        model.addAttribute("welcomeMessage", "Help Desk: центр поддержки пользователей");
+        model.addAttribute("welcomeMessage", "Help Desk: Центр Поддержки Пользователей");
         model.addAttribute("features", List.of(
                 "Регистрация обращений",
                 "Приоритизация задач",
