@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.helpdesk.model.TicketStatus;
+import com.example.helpdesk.model.Ticket;
+import java.util.List;
 
 @Controller
 public class TicketController {
@@ -26,6 +28,12 @@ public class TicketController {
     public String newTickets(Model model) {
         model.addAttribute("tickets",
                 ticketRepository.findByStatus(TicketStatus.NEW));
+        return "tickets";
+    }
+    @GetMapping("/tickets/customer")
+    public String getTicketsByCustomer(Model model) {
+        List<Ticket> customerTickets = ticketRepository.findByCustomerNameContainingIgnoreCase("Иван");
+        model.addAttribute("tickets", customerTickets);
         return "tickets";
     }
 }
