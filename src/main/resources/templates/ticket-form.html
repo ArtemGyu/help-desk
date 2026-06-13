@@ -13,9 +13,12 @@
     <div class="container">
         <a class="navbar-brand" th:href="@{/}">Help Desk</a>
         <div class="navbar-nav">
-            <a class="nav-link" th:href="@{/tickets}">Заявки</a>
-            <a class="nav-link active" th:href="@{/tickets/new}">Создать заявку</a>
+<!--            <a class="nav-link" href="/tickets">Заявки</a> -->
+            <a class="nav-link" th:href="@{/}">Главная</a>
+            <a class="nav-link" th:href="@{/about}">О нас</a>
             <a class="nav-link" th:href="@{/contacts}">Контакты</a>
+            <a class="nav-link active" th:href="@{/tickets/new}">Создать заявку</a>
+            <a class="nav-link" th:href="@{/admin/tickets}">Админ-панель</a>
         </div>
     </div>
 </nav>
@@ -69,7 +72,7 @@
                                 Отправить заявку
                             </button>
                             <a th:href="@{/tickets}" class="btn btn-outline-secondary">
-                                Назад к списку
+                                Открыть список заявок
                             </a>
                         </div>
                     </form>
