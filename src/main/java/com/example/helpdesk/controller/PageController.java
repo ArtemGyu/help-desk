@@ -16,7 +16,8 @@ public class PageController {
         model.addAttribute("features", List.of(
                 "Регистрация обращений",
                 "Приоритизация задач",
-                "Контакты поддержки"
+                "Контакты поддержки",
+                "Администратор"
         ));
         return "index";
     }
@@ -37,5 +38,10 @@ public class PageController {
         model.addAttribute("workTime", "Пн-Пт, 09:00-18:00");
         model.addAttribute("phone", "+7 (000) 000-00-00");
         return "contacts";
+    }
+
+    @GetMapping("/access-denied")
+    public String accessDenied() {
+        return "admin/access-denied";
     }
 }

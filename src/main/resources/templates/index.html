@@ -48,9 +48,15 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <h2 class="h5" th:text="${feature}">Функция</h2>
-                                <p class="card-text text-muted">
+                                <p class="card-text text-muted"
+                                   th:if="${feature != 'Администратор'}">
                                     Этот блок создан на основе данных, переданных из контроллера.
                                 </p>
+                                <a class="btn btn-primary btn-lg"
+                                   th:if="${feature == 'Администратор'}"
+                                   th:href="@{/login}">
+                                    Войти как администратор
+                                </a>
                             </div>
                         </div>
                     </div>
